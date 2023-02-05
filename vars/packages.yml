@@ -1,0 +1,7 @@
+install_packages:
+  - sudo
+  - git
+  - rsync
+  - mosh
+  - sanoid
+

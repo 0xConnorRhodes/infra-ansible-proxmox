@@ -29,3 +29,10 @@
         docker_compose_package_state: present
         docker_users:
           '{{ interactive_user }}'
+
+  post_tasks:
+
+    - name: 'install packages'
+      package:
+        name: '{{ install_packages }}'
+        state: latest
