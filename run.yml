@@ -16,5 +16,16 @@
       append: true
 
   roles:
+
     - role: ironicbadger.proxmox_nag_removal
+
     - role: update-debian
+
+    - role: geerlingguy.docker
+      vars:
+        # ensure `docker compose` can be used
+        docker_install_compose_plugin: true
+        docker_compose_package: docker-compose-plugin
+        docker_compose_package_state: present
+        docker_users:
+          '{{ interactive_user }}'

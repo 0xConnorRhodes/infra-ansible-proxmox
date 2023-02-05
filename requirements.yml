@@ -1,3 +1,4 @@
 ---
 roles:
   - ironicbadger.proxmox_nag_removal
+  - geerlingguy.docker
