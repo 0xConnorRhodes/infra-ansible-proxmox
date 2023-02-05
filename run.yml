@@ -2,11 +2,19 @@
 - name: 'Bootstrap Proxmox on Dell T7600'
   hosts: pve
   remote_user: root
+  vars_files:
+    - vars/secret.yml
 
   pre_tasks:
 
+  - name: 'create interactive user user'
+    user:
+      name: '{{ interactive_user }}'
+      password: '{{ interactive_password | password_hash("sha512") }}'
+      shell: /bin/bash
+      groups: sudo
+      append: true
 
   roles:
-
     - role: ironicbadger.proxmox_nag_removal
     - role: update-debian
