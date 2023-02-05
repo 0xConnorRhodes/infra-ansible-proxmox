@@ -1,0 +1,8 @@
+---
+# tasks file for update-debian
+
+- name: 'Update Packages'
+  apt:
+    update_cache: true
+    upgrade: full
+    autoremove: true
