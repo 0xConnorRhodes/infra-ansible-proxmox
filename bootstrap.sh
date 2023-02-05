@@ -4,6 +4,8 @@
 # TODO delete the local lvm storage in the proxmox GUI
 
 lvremove /dev/pve/data
+swapoff /dev/mapper/pve-swap
+lvremove /dev/pve/swap
 lvresize -l +100%FREE /dev/pve/root
 resize2fs /dev/mapper/pve-root
 
