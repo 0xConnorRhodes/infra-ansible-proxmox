@@ -5,13 +5,8 @@
 
   pre_tasks:
 
-  - name: 'Update Packages'
-    ignore_errors: true # needed if the enterprise repo is still enabled
-    apt:
-      update_cache: true
-      upgrade: full
-      autoremove: true
 
   roles:
 
     - role: ironicbadger.proxmox_nag_removal
+    - role: update-debian
