@@ -1,0 +1,4 @@
+---
+- name 'Bootstrap Proxmox on Dell T7600'
+  hosts: pve
+  remote_user: root
